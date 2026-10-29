@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help Desk Ticket System</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:850px;margin:35px auto;padding:20px;background:#f4f6f9}
+.card{background:white;padding:20px;margin:15px 0;border-radius:8px;border:1px solid #ddd}
+input,textarea,select{display:block;width:100%;box-sizing:border-box;padding:10px;margin:8px 0 15px}
+button{padding:10px 18px;background:#1d3557;color:white;border:0;cursor:pointer}
+a{margin-right:15px}
+</style></head>
+<body>
+<h1>Help Desk Ticket System</h1><h3>Version: {{ version }}</h3>
+<nav><a href="/raise">Raise Issue</a><a href="/tickets">Display Tickets</a><a href="/resolve">Resolve Issue</a></nav>
+{% block content %}{% endblock %}
+</body></html>

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helpdesk-v3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helpdesk-v3
+  template:
+    metadata:
+      labels:
+        app: helpdesk-v3
+    spec:
+      containers:
+        - name: helpdesk
+          image: YOUR_DOCKERHUB_USERNAME/help-desk-system:v3
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_VERSION
+              value: "v3"

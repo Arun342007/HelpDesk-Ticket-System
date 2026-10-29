@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helpdesk-v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helpdesk-v2
+  template:
+    metadata:
+      labels:
+        app: helpdesk-v2
+    spec:
+      containers:
+        - name: helpdesk
+          image: YOUR_DOCKERHUB_USERNAME/help-desk-system:v2
+          ports:
+            - containerPort: 5000
+          env:
+            - name: APP_VERSION
+              value: "v2"

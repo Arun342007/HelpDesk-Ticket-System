@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card"><h2>Resolve / Close Issue</h2><form method="POST">
+<label>Ticket ID</label><input type="number" name="ticket_id" min="1" required>
+<button type="submit">Resolve Ticket</button></form>
+{% if message %}<p><strong>{{ message }}</strong></p>{% endif %}</div>
+<h2>Available Tickets</h2>
+{% for ticket in tickets %}<div class="card"><p>Ticket #{{ ticket.id }} — {{ ticket.title }}</p><p>Status: {{ ticket.status }}</p></div>
+{% else %}<p>No tickets available.</p>{% endfor %}
+{% endblock %}

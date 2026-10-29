@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card"><h2>Raise a Support Ticket</h2>
+<form method="POST">
+<label>Issue Title</label><input name="title" required maxlength="120" placeholder="Unable to login">
+<label>Description</label><textarea name="description" required placeholder="Describe your issue"></textarea>
+<label>Priority</label><select name="priority"><option>Low</option><option selected>Medium</option><option>High</option></select>
+<button type="submit">Submit Ticket</button></form></div>
+{% if created %}<div class="card"><h2>Ticket Created Successfully!</h2>
+<p>Ticket ID: {{ created.id }}</p><p>Title: {{ created.title }}</p>
+<p>Description: {{ created.description }}</p><p>Priority: {{ created.priority }}</p>
+<p>Status: {{ created.status }}</p></div>{% endif %}
+{% endblock %}
