@@ -74,3 +74,15 @@ Visit localhost:5001/raise, localhost:5002/tickets, localhost:5003/resolve.
 
 ## Jenkins
 Jenkinsfile assumes a Linux agent with Python, Docker CLI/daemon, kubectl, and Kubernetes credentials configured. Add Docker Hub username/token as credential ID dockerhub-creds. The checked-out branch must match the selected version.
+## V2 - Display Tickets
+
+V2 displays the help desk tickets submitted through the application.
+
+### Run V2
+
+In PowerShell, run:
+
+    $env:APP_VERSION = "v2"
+    python app.py
+
+Open http://localhost:5000/tickets to display the tickets.
