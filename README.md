@@ -56,6 +56,20 @@ kubectl port-forward service/helpdesk-v1-service 5001:5000
 kubectl port-forward service/helpdesk-v2-service 5002:5000
 kubectl port-forward service/helpdesk-v3-service 5003:5000
 ```
+## V2 - Display Tickets
+
+V2 adds the ability to view the help desk tickets submitted through the application.
+
+### Run V2
+
+Set the application version to v2:
+
+PowerShell:
+
+    $env:APP_VERSION = "v2"
+    python app.py
+
+Open http://localhost:5000/tickets to display the tickets.
 Visit localhost:5001/raise, localhost:5002/tickets, localhost:5003/resolve.
 
 ## Jenkins
